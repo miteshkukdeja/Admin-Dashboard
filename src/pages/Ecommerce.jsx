@@ -10,21 +10,22 @@ import {
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Ecommerce = () => {
+  const { currentColor, currentMode } = useStateContext();
   return (
     <div className="mt-24">
       <div className="flex flex-wrap lg:flex-nowrap justify-center ">
         <div className="bg-white dark:text-white-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3">
           <div className="flex justify-between items-center ">
             <div>
-              <p className="font-bold">Earnings</p>
-              <p className="font-bold text-2xl">$784,574,565</p>
+              <p className="font-bold dark:text-white">Earnings</p>
+              <p className="font-bold text-2xl dark:text-white">$784,574,565</p>
             </div>
           </div>
 
           <div className="mt-6">
             <Button
               color="white"
-              bgColor="blue"
+              bgColor={currentColor}
               text="Download"
               borderRadius="10px"
             />
@@ -101,18 +102,18 @@ const Ecommerce = () => {
               {/* Line Chart */}
               <div className="mt-5 ">
                 <SparkLine
-                  currentColor="blue"
+                  currentColor={currentColor}
                   id="line-sparkline"
                   type="Line"
                   height="80"
                   width="250"
                   data={SparklineAreaData}
-                  color="blue"
+                  color={currentColor}
                 />
               </div>
               <div className="mt-10">
                 <Button
-                  bgColor={"blue"}
+                  bgColor={currentColor}
                   color={"white"}
                   text={"Download Report"}
                   borderRadius="10px"
@@ -122,7 +123,7 @@ const Ecommerce = () => {
 
             {/* Right Side Container of Revenue */}
             <div>
-              <Stacked width="320px" height="360px" />
+              <Stacked currentMode={currentMode} width="320px" height="360px" />
             </div>
           </div>
         </div>

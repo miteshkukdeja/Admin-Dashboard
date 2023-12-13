@@ -19,7 +19,7 @@ import { Header } from "../../components";
 const Area = () => {
   const { currentMode } = useStateContext();
   return (
-    <div className="m-4 md:m-10 bg-white mt-24 p-10 dark:bg-secondary-dark-bg">
+    <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
       <Header category={"Area"} title={"Inflation Rate in Percentage "} />
       <ChartComponent
         id="area-chart"
@@ -28,6 +28,9 @@ const Area = () => {
         primaryYAxis={areaPrimaryYAxis}
         chartArea={{ border: { width: 0 } }}
         background={currentMode === "Dark" ? "#33373E" : "#fff"}
+        legendSettings={{
+          background: "white",
+        }}
       >
         <Inject services={[SplineAreaSeries, DateTime, Legend]} />
         <SeriesCollectionDirective>

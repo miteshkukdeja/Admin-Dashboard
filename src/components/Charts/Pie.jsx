@@ -10,14 +10,21 @@ import {
   AccumulationTooltip,
 } from "@syncfusion/ej2-react-charts";
 import { pieChartData } from "../../data/dummy";
+import { useStateContext } from "../../contexts/ContextProvider";
 
 const Pie = () => {
+  const { currentMode } = useStateContext();
   return (
     <div className="w-full">
       <AccumulationChartComponent
         id="chart-pie"
-        legendSettings={{ visible: true, background: "white" }}
         height="full"
+        legendSettings={{
+          visible: true,
+          background: currentMode === "Dark" ? "#33373E" : "white",
+          textStyle: { color: currentMode === "Dark" ? "white" : "#33373E" },
+        }}
+        background={currentMode === "Dark" ? "#33373E" : "#fff"}
       >
         <Inject
           services={[

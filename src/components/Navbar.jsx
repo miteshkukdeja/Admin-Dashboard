@@ -5,7 +5,7 @@ import { BsChatLeft } from "react-icons/bs";
 import { RiNotification3Line } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import avatar from "../data/avatar.jpg";
+import avatar from "../data/avatar3.png";
 import { Cart, Chat, Notification, UserProfile } from ".";
 import { useStateContext } from "../contexts/ContextProvider";
 
@@ -83,6 +83,7 @@ const Navbar = () => {
           color={currentColor}
           icon={<RiNotification3Line />}
         />
+        <div className=" border-r-2 border-color m-4 h-5" />
 
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
@@ -92,7 +93,7 @@ const Navbar = () => {
             <img src={avatar} className="rounded-full w-8 h-8" />
             <p>
               <span className="text-gray-400 text-14">Hi, </span>{" "}
-              <span className="text-gray-400 text-14 font-bold ml-1">
+              <span className="text-gray-400 text-14 font-medium ml-1">
                 Mitesh
               </span>
             </p>
